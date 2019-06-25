@@ -2,6 +2,15 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+    constructor() {
+        // calls all constructors of parent classes
+        super();
+
+        this.state = {
+            gifts: []
+        };
+    }
+
     render() {
         return (
             <div>
