@@ -47,7 +47,11 @@ class App extends Component {
                     { // interpolation lets us add logic to our render function
                         this.state.gifts.map(gift => {
                             return (
-                                <Gift key={gift.id} />
+                                <Gift
+                                    key={gift.id}
+                                    gift={gift}
+                                    removeGift={this.removeGift}
+                                />
                             )
                         })
                     }
