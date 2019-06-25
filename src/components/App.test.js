@@ -27,9 +27,13 @@ it('adds a new gift to `state` when clicking the `add gift` button', () => {
     expect(app.state().gifts).toEqual([{ id: 1 }]);
 });
 
+// BEWARE: test pollution
+    // a.	= when one test affects the others
+        // i.E.g.updating state
+    // b.Ideally, we want each test to be an isolated case
 it('adds a new gift to the rendered list when clicking the `add gift` button', () => {
     app.find('.btn-add').simulate('click');
 
     // .children() returns an array of the inner child nodes of the node that we're looking at.  can look at its length
-    expect(app.find('.gift-list').children().length).toEqual(1);
+    expect(app.find('.gift-list').children().length).toEqual(2);
 });
