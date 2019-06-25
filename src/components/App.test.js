@@ -15,3 +15,14 @@ it('renders correctly', () => {
 it('initializes the `state` with an empty list of gifts', () => {
     expect(app.state().gifts).toEqual([]);
 });
+
+it('adds a new gift to `state` when clicking the `add gift` button', () => {
+    // find Add give button
+        // finds class name
+        // use simulations they provide
+    app.find('.btn-add').simulate('click');
+
+    // make sure state updates
+        // to create unique IDs, we get their index +1 so we always get a unique ID for the next object
+    expect(app.state().gifts).toEqual([{ id: 1 }]);
+});
