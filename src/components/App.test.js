@@ -52,6 +52,11 @@ describe('App', () => {
             // .children() returns an array of the inner child nodes of the node that we're looking at.  can look at its length
             expect(app.find('.gift-list').children().length).toEqual(1);
         });
+
+        it('creates a Gift component', () => {
+            // .exists returns a Boolean that depends on whether or not the node is actually there
+            expect(app.find('Gift').exists()).toBe(true);
+        });
     }); 
 
     describe('when typing into the present input', () => {
