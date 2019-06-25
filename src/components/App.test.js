@@ -21,6 +21,8 @@ describe('App', () => {
 
     // can create nested describe buttons for tests that simulate the same action
     describe('when clicking the `add-gift` button', () => {
+        const id = 1;
+
         beforeEach(() => {
             app.find('.btn-add').simulate('click');
         });
@@ -39,7 +41,8 @@ describe('App', () => {
 
             // make sure state updates
             // to create unique IDs, we get their index +1 so we always get a unique ID for the next object
-            expect(app.state().gifts).toEqual([{ id: 1 }]);
+                // ES6 syntax means this is really the same as { id: id }
+            expect(app.state().gifts).toEqual([{ id }]);
         });
 
         // BEWARE: test pollution
@@ -57,5 +60,18 @@ describe('App', () => {
             // .exists returns a Boolean that depends on whether or not the node is actually there
             expect(app.find('Gift').exists()).toBe(true);
         });
-    }); 
+
+        describe('and the user wants to remove the added gift', () => {
+            beforeEach(() => {
+                // Instance = occurrence of our app component within our test
+                // a.Can access that instance with the app.instance() helper method
+                // b.Now we’ll have access to any helper method that the app will contain
+                app.instance().removeGift(id);
+            });
+
+            it('removes the gift from `state`', () => {
+                expect(app.state().gifts).toEqual([]);
+            });
+        });
+    });
 });
