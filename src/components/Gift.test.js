@@ -6,6 +6,6 @@ describe('Gift', () => {
     const gift = shallow(<Gift />);
 
     it('renders properly', () => {
-        exportAllDeclaration(gift).toMatchSnapshot();
+        expect(gift).toMatchSnapshot();
     });
 });
