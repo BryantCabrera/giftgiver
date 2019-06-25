@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Gift from './Gift';
+import { max_number } from '../helper/index';
 
 class App extends Component {
     constructor() {
@@ -22,7 +23,8 @@ class App extends Component {
 
         // spread operator spreads out the ids from above
         // ternary takes care of edge case when we have an empty array in the beginning
-        const max_id = ids.length > 0 ? Math.max(...ids) : 0;
+        // const max_id = ids.length > 0 ? Math.max(...ids) : 0;
+        const max_id = max_number(ids);
 
         gifts.push({ id: max_id + 1 });
 
