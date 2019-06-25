@@ -26,3 +26,10 @@ it('adds a new gift to `state` when clicking the `add gift` button', () => {
         // to create unique IDs, we get their index +1 so we always get a unique ID for the next object
     expect(app.state().gifts).toEqual([{ id: 1 }]);
 });
+
+it('adds a new gift to the rendered list when clicking the `add gift` button', () => {
+    app.find('.btn-add').simulate('click');
+
+    // .children() returns an array of the inner child nodes of the node that we're looking at.  can look at its length
+    expect(app.find('.gift-list').children().length).toEqual(1);
+});
