@@ -1,7 +1,7 @@
 # GiftGiver
 
 ## A. Description
-Recyclopedia is a full stack app built in 1 day by Bryant Cabrera
+LootCheck is a full stack app built in 1 day by Bryant Cabrera
 
 ## B. User Stories
 
