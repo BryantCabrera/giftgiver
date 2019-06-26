@@ -15,8 +15,7 @@ Recyclopedia is a full stack app built in 1 day by Bryant Cabrera
     2. React Router
     3. CSS
     4. BEM
-    5. Google fonts
-    6. Font Awesome Icons
+    5. react-bootstrap
 
 > Back-End
 
@@ -24,7 +23,6 @@ Recyclopedia is a full stack app built in 1 day by Bryant Cabrera
     2. Express
     3. MongoDB
     4. Mongoose
-    5. ***** Fill In Tech from Alex & Nic *****
 
 > Authentication
     
